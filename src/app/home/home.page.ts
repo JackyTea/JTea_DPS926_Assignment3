@@ -92,6 +92,7 @@ export class HomePage implements OnInit {
         this.presentNoStockAlert('Error', 'No enough stock!', `Not enough stock for ${this.products[productFound].name}.`);
       }
     }
+    this.onClearKeypadClicked();
   }
 
   async presentNoStockAlert(header: string, subHeader: string, message: string) {

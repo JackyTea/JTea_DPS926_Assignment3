@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>History Detail Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <ion-label>
+      <strong>Name:</strong> {{ history.name }}
+    </ion-label>
+    <ion-label>
+      <strong>Quantity purchased:</strong> {{ history.quantity }}
+    </ion-label>
+    <ion-label>
+      <strong>Price of product:</strong> {{ history.price }}
+    </ion-label>
+    <ion-label>
+      <strong>Date of purchase:</strong> {{ purchaseDate }}
+    </ion-label>
+  </div>
+</ion-content>

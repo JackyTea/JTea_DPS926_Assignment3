@@ -11,7 +11,7 @@
   <div id="container">
     <!-- history list  -->
     <ion-list *ngFor="let h of history">
-      <ion-item (click)="onProductClicked(product)" class="yeet">
+      <ion-item [routerLink]="['/history-detail-page', h.purchaseDate]">
         <ion-grid>
           <ion-row>
             <ion-col col-6>

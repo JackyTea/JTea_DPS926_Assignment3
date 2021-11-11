@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'restock-page',
     loadChildren: () => import('./restock-page/restock-page.module').then( m => m.RestockPagePageModule)
   },
+  {
+    path: 'history-detail-page/:id',
+    loadChildren: () => import('./history-detail-page/history-detail-page.module').then( m => m.HistoryDetailPagePageModule)
+  },
 ];
 
 @NgModule({
