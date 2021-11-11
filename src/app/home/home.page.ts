@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 import { Product } from '../interfaces/product';
 import { History } from '../interfaces/history';
 import { HistoryManagerService } from '../services/history-manager.service';
@@ -20,6 +21,7 @@ export class HomePage implements OnInit {
   public purchaseTotal = 'Total';
 
   constructor(
+    public alertController: AlertController,
     private productService: ProductManagerService,
     private historyService: HistoryManagerService
   ) { }
@@ -72,14 +74,35 @@ export class HomePage implements OnInit {
   onBuyClick() {
     const productFound = this.products.findIndex((product) => product.name === this.productType);
     if (productFound >= 0 && parseInt(this.productQuantity, 10) > 0 && this.productQuantity !== 'Quantity') {
-      const newHistoryRecord: History = {
-        name: this.products[productFound].name,
-        quantity: parseInt(this.productQuantity, 10),
-        price: this.products[productFound].price,
-        purchaseDate: Date.now()
-      };
-      this.products[productFound].quantity -= parseInt(this.productQuantity, 10);
-      this.historyService.addNewHistory(newHistoryRecord);
+      if (parseInt(this.productQuantity, 10) <= this.products[productFound].quantity) {
+        const newHistoryRecord: History = {
+          name: this.products[productFound].name,
+          quantity: parseInt(this.productQuantity, 10),
+          price: this.products[productFound].price,
+          purchaseDate: Date.now()
+        };
+        this.productService.updateProductByName(
+          this.products[productFound].name,
+          this.products[productFound].quantity - parseInt(this.productQuantity, 10),
+          this.products[productFound].price
+        );
+        this.products[productFound].quantity -= parseInt(this.productQuantity, 10);
+        this.historyService.addNewHistory(newHistoryRecord);
+      } else {
+        this.presentNoStockAlert('Error', 'No enough stock!', `Not enough stock for ${this.products[productFound].name}.`);
+      }
     }
+  }
+
+  async presentNoStockAlert(header: string, subHeader: string, message: string) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header,
+      subHeader,
+      message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }
