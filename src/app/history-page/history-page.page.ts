@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { History } from '../interfaces/history';
+import { HistoryManagerService } from '../services/history-manager.service';
 
 @Component({
   selector: 'app-history-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryPagePage implements OnInit {
 
-  constructor() { }
+  public history: History[];
+
+  constructor(private historyService: HistoryManagerService) { }
 
   ngOnInit() {
+    this.history = this.historyService.getAllHistory();
   }
 
 }

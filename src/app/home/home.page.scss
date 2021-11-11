@@ -20,3 +20,8 @@
 #container a {
   text-decoration: none;
 }
+
+ion-item:hover {
+  cursor: pointer;
+  --background: var(--ion-item-background, var(--ion-background-color, rgb(214, 214, 214)));
+}
