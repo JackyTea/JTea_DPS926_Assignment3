@@ -1,0 +1,18 @@
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+input, select {
+  margin: 10px;
+  background: white;
+}
+
+button {
+  margin: 10px;
+  background: gray;
+  padding: 10px;
+}

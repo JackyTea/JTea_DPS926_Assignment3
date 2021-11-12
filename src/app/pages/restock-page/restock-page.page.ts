@@ -30,9 +30,17 @@ export class RestockPagePage implements OnInit {
     this.products = this.productService.getAllProducts();
   }
 
+  ionViewWillEnter() {
+    this.products = this.productService.getAllProducts();
+  }
+
   onSubmit(event: Event) {
     event.preventDefault();
-    if (!this.restockForm.dirty && !this.restockForm.valid) {
+    if (!this.restockForm.dirty ||
+      !this.restockForm.valid ||
+      !this.restockForm.get('name').value ||
+      !this.restockForm.get('quantity').value
+    ) {
       this.presentEmptyFieldAlert();
     } else {
       const productIndex = this.products.findIndex((product) => product.name === this.restockForm.get('name').value);
