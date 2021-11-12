@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Product } from '../interfaces/product';
-import { ProductManagerService } from '../services/product-manager.service';
+import { Product } from '../../interfaces/product';
+import { ProductManagerService } from '../../services/product-manager.service';
 
 @Component({
   selector: 'app-restock-page',

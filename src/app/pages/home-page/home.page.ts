@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { Product } from '../interfaces/product';
-import { History } from '../interfaces/history';
-import { HistoryManagerService } from '../services/history-manager.service';
-import { ProductManagerService } from '../services/product-manager.service';
+import { Product } from '../../interfaces/product';
+import { History } from '../../interfaces/history';
+import { HistoryManagerService } from '../../services/history-manager.service';
+import { ProductManagerService } from '../../services/product-manager.service';
 
 @Component({
   selector: 'app-home',
