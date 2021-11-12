@@ -1,0 +1,38 @@
+#container {
+  margin: 20px 70px 20px 70px;
+  text-align: center;
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+ion-item:hover {
+  cursor: pointer;
+  --background: var(--ion-item-background, var(--ion-background-color, rgb(214, 214, 214)));
+}
+
+input, select {
+  margin: 10px;
+  background: white;
+}
+
+button {
+  margin: 10px;
+  background: gray;
+  padding: 10px;
+}

@@ -30,6 +30,10 @@ export class HomePage implements OnInit {
     this.products = this.productService.getAllProducts();
   }
 
+  ionViewWillEnter() {
+    this.products = this.productService.getAllProducts();
+  }
+
   onProductClicked(product: Product) {
     this.productType = product.name;
     this.onTotalUpdate();
