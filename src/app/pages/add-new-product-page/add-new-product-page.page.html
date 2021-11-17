@@ -4,30 +4,39 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Add New Product Page</ion-title>
+    <ion-buttons slot="end">
+      <div style="display: flex; justify-content: center">
+        <button class="button" type="submit" (click)="onSubmit($event)">
+          Add New Product
+        </button>
+        <button class="button" type="button" (click)="onCancel()">
+          Cancel
+        </button>
+      </div>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<div id="container">
-  <form [formGroup]="addProductForm" (ngSubmit)="onSubmit($event)">
-    <div>
-      <label for="name">Product Name</label>
-      <input id="name" name="name" type="text" formControlName="name" />
-    </div>
-    <div>
-      <label for="quantity">Product Quantity</label>
-      <input id="quantity" name="quantity" type="number" formControlName="quantity" />
-    </div>
-    <div>
-      <label for="price">Product Price</label>
-      <input id="price" name="price" type="number" formControlName="price" />
-    </div>
-    <div style="display: flex; justify-content: center;">
-      <button class="button" type="submit">Add New Product</button>
-      <button class="button" type="button" (click)="onCancel()">
-        Cancel
-      </button>
-    </div>
-  </form>
-</div>
+  <div id="container">
+    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit($event)">
+      <div>
+        <label for="name">Product Name</label>
+        <input id="name" name="name" type="text" formControlName="name" />
+      </div>
+      <div>
+        <label for="quantity">Product Quantity</label>
+        <input
+          id="quantity"
+          name="quantity"
+          type="number"
+          formControlName="quantity"
+        />
+      </div>
+      <div>
+        <label for="price">Product Price</label>
+        <input id="price" name="price" type="number" formControlName="price" />
+      </div>
+    </form>
+  </div>
 </ion-content>
