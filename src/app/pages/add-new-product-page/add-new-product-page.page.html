@@ -22,11 +22,11 @@
     <form [formGroup]="addProductForm" (ngSubmit)="onSubmit($event)">
       <div>
         <label for="name">Product Name</label>
-        <input id="name" name="name" type="text" formControlName="name" />
+        <input style="border: gray solid 1px;" id="name" name="name" type="text" formControlName="name" />
       </div>
       <div>
         <label for="quantity">Product Quantity</label>
-        <input
+        <input style="border: gray solid 1px;"
           id="quantity"
           name="quantity"
           type="number"
@@ -35,7 +35,7 @@
       </div>
       <div>
         <label for="price">Product Price</label>
-        <input id="price" name="price" type="number" formControlName="price" />
+        <input style="border: gray solid 1px;" id="price" name="price" type="number" formControlName="price" />
       </div>
     </form>
   </div>
