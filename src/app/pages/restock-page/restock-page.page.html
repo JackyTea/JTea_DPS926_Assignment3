@@ -24,9 +24,19 @@
       </div>
       <div>
         <label for="quantity">Quantity</label>
-        <input id="quantity" name="quantity" type="number" formControlName="quantity" />
+        <input
+          id="quantity"
+          name="quantity"
+          type="number"
+          formControlName="quantity"
+        />
       </div>
-      <button class="button" type="submit">Restock Product</button>
+      <div style="display: flex; justify-content: center;">
+        <button class="button" type="submit">Restock Product</button>
+        <button class="button" type="button" (click)="onCancel()">
+          Cancel
+        </button>
+      </div>
     </form>
 
     <!-- product list  -->

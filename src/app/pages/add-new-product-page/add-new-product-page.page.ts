@@ -28,7 +28,6 @@ export class AddNewProductPagePage implements OnInit {
 
   }
 
-
   onSubmit(event: Event) {
     event.preventDefault();
     if (!this.addProductForm.dirty ||
@@ -50,6 +49,10 @@ export class AddNewProductPagePage implements OnInit {
         `Successfully added ${this.addProductForm.get('name').value}`
       );
     }
+    this.addProductForm.reset();
+  }
+
+  onCancel() {
     this.addProductForm.reset();
   }
 

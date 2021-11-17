@@ -54,6 +54,10 @@ export class RestockPagePage implements OnInit {
     this.restockForm.reset();
   }
 
+  onCancel() {
+    this.restockForm.reset();
+  }
+
   selectProductName(event) {
     this.restockForm.get('name').setValue(event.target.value);
   }
